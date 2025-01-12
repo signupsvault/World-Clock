@@ -1,0 +1,7 @@
+Now, if user clicks on convert time, 
+1. then time difference is calculated between countries and result is shown in time difference. (for example: Time Difference: Country 2 is 12 hours and 55 minutes (ahead/behind))
+2. Then,  if user clicks on convert time, converted time is calculated and to be shown in converted time. (if, time format is in 12 hours, the converted time is in format of 00:00:00 Am/Pm; if, time format is in 24 hours, the converted time is in format of 00:00:00 )
+3.  calculate the difference, and based on that show time in converted time. For example. if time difference was 1 hour ahead, then the clock in converted time should be 1 hour ahead. i.e. in select time, if clock was 1:00:00, time difference is 1 hour ahead, the the converted time would be 2:00:00.
+4. the converted time is should behave like a clock, and should run continuously. 
+5. The converted time is not present time to be shown, rather, the conversion of time that is written in select time box. i.e. whatever the time difference is, based on that, the converted time is shown.
+6. When, the country gets changed, the converted time clock should not glitches.
