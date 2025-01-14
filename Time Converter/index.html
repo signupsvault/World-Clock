@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Converter - Global Time Zone Clock</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Link to Global CSS -->
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="../Logo/988ab9fd-0afb-4823-8deb-0d6c4addf1f5.jpg" alt="Global Time Zone Clock Logo"> 
+            </div>            <ul>
+                <li><a href="../Home/index.html">Clock</a></li>
+               <li><a href="../Compare Timezones/index.html">Compare TimeZones</a></li>
+               <li><a href="../Time Converter/index.html">Time Converter</a></li>
+               <li><a href="../About Us/index.html">About</a></li>
+                <li><a href="../Contact/index.html">Contact</a></li>
+                <li><a href="../FAQs/index.html">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+     <div class="format-switch">
+        <button class="format-btn active" id="format-24hr-btn">24-Hour</button>
+        <button class="format-btn" id="format-12hr-btn">12-Hour</button>
+    </div>
+    <main>
+        <section id="time-converter-section">
+            <h2>Time Converter</h2>
+            <div class="converter-container">
+                <div class="converter-selectors">
+                    <div class="converter-selector">
+                        <label for="from-country-select">From Country:</label>
+                        <select id="from-country-select"></select>
+                    </div>
+                     <div class="converter-selector" id="time-container">
+                         <label for="from-hour-select">Hour:</label>
+                            <select id="from-hour-select"></select>
+                         <label for="from-minute-select">Minute:</label>
+                            <select id="from-minute-select"></select>
+                        <label for="from-ampm-select" id="ampm-label">AM/PM:</label>
+                            <select id="from-ampm-select" style="display: none;"></select>
+                    </div>
+                      <div class="converter-selector">
+                        <label for="from-date-input">Date:</label>
+                         <input type="date" id="from-date-input">
+                    </div>
+                    <div class="converter-selector">
+                        <label for="to-country-select">To Country:</label>
+                        <select id="to-country-select"></select>
+                    </div>
+                </div>
+                <div class="converter-results">
+                      <div class="converter-result" >
+                        <h3>Time Difference</h3>
+                        <p id="time-difference">--</p>
+                    </div>
+                   <div class="converter-result" >
+                        <h3>Calculation</h3>
+                        <p id="time-calculation">--</p>
+                    </div>
+                    <div class="converter-result" >
+                        <h3 id="converted-time-heading">Converted Time</h3>
+                        <p id="converted-time">--:--:--</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 Global Time Zone Clock</p>
+    </footer>
+    <!-- Link to Global JS -->
+    <script src="../script.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

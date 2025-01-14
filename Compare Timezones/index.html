@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Zone Comparison - Global Time Zone Clock</title>
+    <!-- Link to Global CSS -->
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../Compare Timezones/styles.css">
+
+    
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="../Logo/988ab9fd-0afb-4823-8deb-0d6c4addf1f5.jpg" alt="Global Time Zone Clock Logo"> 
+            </div>
+            <ul>
+                <li><a href="../Home/index.html">Clock</a></li>
+               <li><a href="../Compare Timezones/index.html">Compare TimeZones</a></li>
+               <li><a href="../Time Converter/index.html">Time Converter</a></li>
+               <li><a href="../About Us/index.html">About</a></li>
+                <li><a href="../Contact/index.html">Contact</a></li>
+                 <li><a href="..//FAQs/index.html">FAQ</a></li>
+           </ul>
+        </nav>
+    </header>
+    <div class="format-switch">
+        <button id="format-12hr-btn" class="format-btn active">12 Hour</button>
+        <button id="format-24hr-btn" class="format-btn">24 Hour</button>
+    </div>
+    <main>
+        <section id="comparison-section">
+            <h2>Time Zone Comparison</h2>
+            <div class="comparison-container">
+                <div class="comparison-selectors">
+                    <div class="country-selector">
+                        <label for="country1-select">Country 1:</label>
+                        <select id="country1-select"></select>
+                    </div>
+                    <div class="country-selector">
+                        <label for="country2-select">Country 2:</label>
+                        <select id="country2-select"></select>
+                    </div>
+                </div>
+                <div class="comparison-results">
+                    <div class="time-card" id="time-card-1">
+                        <h3 class="country-name" data-country-id="1">Country 1</h3>
+                        <p class="time" data-time-id="1">--:--:--</p>
+                    </div>
+                    <div class="time-card" id="time-card-2">
+                        <h3 class="country-name" data-country-id="2">Country 2</h3>
+                        <p class="time" data-time-id="2">--:--:--</p>
+                    </div>
+                    <div class="time-diff-card">
+                        <h3>Time Difference</h3>
+                        <p class="time-diff">--:--:--</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 Global Time Zone Clock</p>
+    </footer>
+    <!-- Link to Global JS -->
+   <script src="../script.js"></script>
+    <script src="script.js"></script>
+    </body>
+</html>

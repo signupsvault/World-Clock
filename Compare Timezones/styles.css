@@ -1,0 +1,244 @@
+/* --- Global Variables --- */
+:root {
+    --primary-color: #000000;   /* Main color */
+    --secondary-color: #000000; /* Secondary color for dark text*/
+    --background-dark: #000000;  /* Dark background */
+    --background-light: #96909042; /* Light background */
+    --text-light: #ffffffd7;       /* Text color on dark backgrounds */
+    --text-dark: #fffffff0;          /* Text color on light backgrounds */
+  --card-shadow: 0 6px 15px rgba(0, 0, 0, 0.25); /* Box shadow effect */
+  --card-border-radius: 15px;
+  --transition-speed: 0.3s;
+    --font-family: 'Roboto', sans-serif; /* Example font - consider using a font from google fonts*/
+}
+
+/* --- General Styles --- */
+#comparison-section {
+  font-family: var(--font-family); /* Apply the font*/
+  width: 95%;
+    max-width: 1200px;
+    padding: 40px;
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--card-shadow);
+    text-align: center;
+    margin: 30px auto; /* Center and margin top/bottom */
+    background: var(--background-dark); /* Use dark as default background*/
+    transition: background-color var(--transition-speed), border var(--transition-speed);
+    border: 1px solid rgba(38, 139, 61, 0.1); /* subtle border*/
+}
+
+#comparison-section.light-mode {
+    background: var(--background-light);
+  border: 1px solid rgba(214, 208, 208, 0.1);/* subtle light mode border */
+}
+
+/* Heading */
+#comparison-section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+    color: var(--text-light);
+    text-shadow: 1px 1px 3px rgba(149, 143, 143, 0.5);
+     letter-spacing: 1px;
+    transition: color var(--transition-speed);
+}
+#comparison-section h2.light-mode {
+    color: var(--text-dark);
+     text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Container */
+.comparison-container{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px;
+}
+
+/* Selectors container */
+.comparison-selectors {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+/* Individual selectors */
+.country-selector{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Label */
+.country-selector label {
+    font-size: 1.2rem;
+    color: var(--text-light);
+     text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    transition: color var(--transition-speed);
+}
+.country-selector label.light-mode{
+    color: var(--text-dark);
+}
+
+
+/* Select */
+.comparison-selectors select {
+    padding: 15px 22px;
+    font-size: 1.2rem;
+     border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background:  rgba(0, 0, 0, 0.897); /* add a light overlay */
+    color: var(--text-dark);
+      box-shadow: 0 3px 8px rgba(130, 126, 126, 0.998); /* Subtle shadow */
+    transition:  rgb(2, 2, 2) background var(--transition-speed), color var(--transition-speed), border-color var(--transition-speed);
+  min-width: 250px;
+  text-align: center;
+   border: 1px solid rgba(255,255,255,0.1); /* subtle border*/
+}
+
+.comparison-selectors select:focus {
+    outline: none;
+   border: 2px solid var(--primary-color); /* focus effect*/
+    box-shadow: 0 3px 10px rgba(102,126,234,0.4);
+}
+
+
+.comparison-selectors select.light-mode {
+   background:  rgba(0, 0, 0, 0.08); /* change overlay for lightmode */
+    color: var(--text-dark);
+    border: 1px solid rgba(0,0,0,0.1);
+}
+/* Results Container */
+.comparison-results {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* Cards */
+.time-card,
+.time-diff-card {
+   background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--card-border-radius);
+    padding: 30px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    min-width: 280px;
+    flex: 1 1 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative; /* Required for pseudo-element */
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+    overflow: hidden; /* Hide any overflow from pseudo-element */
+}
+
+.time-card.light-mode,
+.time-diff-card.light-mode {
+    background:  rgba(0, 0, 0, 0.05);
+  }
+
+
+/* Card Heading */
+.time-card h3,
+.time-diff-card h3 {
+    font-size: 1.5rem;
+      color: var(--text-light);
+    margin-bottom: 15px;
+     text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+      position: relative;
+    z-index: 1; /* Ensure text is above the gradient */
+    transition: color var(--transition-speed);
+}
+.time-card h3.light-mode,
+.time-diff-card h3.light-mode {
+    color: var(--text-dark);
+}
+
+/* Time */
+.time-card p.time,
+.time-diff-card p.time-diff{
+    font-size: 2.2rem;
+    font-weight: 600;
+   color: var(--text-light);
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 1; /* Ensure text is above the gradient */
+     transition: color var(--transition-speed);
+}
+.time-card p.time.light-mode,
+.time-diff-card p.time-diff.light-mode{
+    color: var(--text-dark);
+}
+
+/* Time Difference Card Specific Styling */
+.time-diff-card .time-diff-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.time-diff-card .country-name{
+    font-size: 1.2rem;
+    font-weight: bold;
+     color: var(--text-dark);
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+      transition: color var(--transition-speed);
+}
+.time-diff-card .country-name.light-mode{
+    color: var(--text-light);
+}
+
+
+.time-diff-card .time-diff {
+    font-size: 1.8rem; /* reduce the size of the time*/
+    font-weight: normal; /* make it normal font */
+    white-space: nowrap; /* prevent wrapping */
+        color: #68d391;
+     transition: color var(--transition-speed);
+}
+.time-diff-card .time-diff.light-mode{
+   color: #89e3ab;
+}
+/* Direction Indicator */
+.time-diff-card .direction-indicator {
+    font-size: 1.2rem;
+     color: var(--text-dark);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+     transition: color var(--transition-speed);
+}
+.time-diff-card .direction-indicator.light-mode{
+     color: var(--text-light);
+}
+
+.time-diff-card .direction-indicator.ahead {
+   color: #68d391; /* Green for ahead */
+}
+
+.time-diff-card .direction-indicator.behind {
+    color: #f56565; /* Red for behind */
+}
+
+
+/* ---- Animations ----*/
+.time-card::before,
+.time-diff-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(135deg, rgba(102,126,234,0.15), transparent); /* subtle gradient overlay */
+    z-index: 0; /* Place behind text */
+     opacity: 0;
+    transition: opacity var(--transition-speed);
+}
+.time-card:hover::before,
+.time-diff-card:hover::before{
+  opacity: 1;
+}

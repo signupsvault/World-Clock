@@ -1,0 +1,296 @@
+/* style.css (inside the "Contact" folder) */
+
+.contact-section {
+  width: 95%;
+  max-width: 1200px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-container {
+  width: 100%;
+  max-width: 1000px;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border: 1px solid #333;
+}
+.contact-container:hover {
+  transform: translateY(-5px);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.contact-container.light-mode{
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid #ddd;
+}
+
+.contact-container h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #fff;
+   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.contact-container.light-mode h2{
+  color: #333;
+}
+.contact-container p {
+  font-size: 1.2rem;
+ color: #fff;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+.contact-container.light-mode p{
+  color: #333;
+}
+
+.contact-details-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.contact-details {
+  text-align: left;
+}
+.contact-details h3{
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+.contact-details h3.light-mode{
+  color: #333;
+}
+.contact-details address {
+  font-style: normal;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.contact-details address p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #fff;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.contact-details address p.light-mode{
+ color: #333;
+}
+.contact-details address a {
+   color: #45a049;
+ text-decoration: none;
+  transition: color 0.3s ease;
+}
+.contact-details address a:hover{
+  color: #6ab04c;
+   text-decoration: underline;
+}
+
+.contact-details .faq-link a{
+display: inline-flex;
+align-items: center;
+  gap: 10px;
+  color: #fff;
+   text-decoration: none;
+  transition: color 0.3s ease;
+}
+.contact-details .faq-link a:hover {
+color: #ddd;
+text-decoration: underline;
+}
+
+.contact-details .faq-link a i{
+  font-size: 1.2rem;
+}
+.contact-form {
+ text-align: left;
+}
+.contact-form h3{
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+   color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+.contact-form h3.light-mode{
+  color: #333;
+}
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-form .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.contact-form .form-group label {
+   font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 5px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+.contact-form .form-group label.light-mode{
+color: #333;
+}
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background-color: rgba(255, 255, 255, 0.05);
+   color: #fff;
+ transition: border-color 0.3s ease;
+font-family: 'Arial', sans-serif;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+  outline: none;
+ border-color: #6ab04c; /* Focus border color */
+}
+
+.contact-form input[type="text"].light-mode,
+ .contact-form input[type="email"].light-mode,
+ .contact-form textarea.light-mode{
+ background-color: rgba(0, 0, 0, 0.05);
+ border: 1px solid #ccc;
+  color: #000;
+ }
+
+.contact-form button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #45a049;
+   color: #fff;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+background-color: #6ab04c;
+}
+
+.social-media {
+  margin-top: 30px;
+}
+
+.social-media h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+    color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+.social-media h3.light-mode{
+color: #333;
+}
+.social-media ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.social-media ul li a {
+font-size: 2rem;
+color: #fff;
+  transition: color 0.3s ease;
+}
+.social-media ul li a:hover {
+color: #89e3ab;
+}
+.social-media ul li a.light-mode{
+ color: #333;
+}
+.social-media ul li a.light-mode:hover {
+   color: #555;
+}
+/*-------------------Feedback Section----------------*/
+.feedback-section{
+  margin-top: 30px;
+  text-align: left;
+}
+.feedback-section h3 {
+font-size: 1.5rem;
+  margin-bottom: 10px;
+   color: #fff;
+   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+.feedback-section h3.light-mode {
+color: #333;
+}
+
+.feedback-section p {
+      font-size: 1.2rem;
+   color: #fff;
+    margin-bottom: 10px;
+     text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+.feedback-section p.light-mode {
+color: #333;
+}
+.rating{
+display: inline-flex;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.rating i {
+font-size: 1.5rem;
+color: #888;
+margin-right: 5px;
+  transition: color 0.3s ease;
+}
+
+.rating i.active,
+.rating i:hover {
+  color: #ffc107;
+}
+.feedback-section textarea {
+ width: 100%;
+    padding: 10px;
+  border-radius: 8px;
+ border: 1px solid #444;
+    background-color: rgba(255, 255, 255, 0.05);
+   color: #fff;
+     transition: border-color 0.3s ease;
+     font-family: 'Arial', sans-serif;
+}
+.feedback-section textarea:focus {
+      outline: none;
+       border-color: #6ab04c; /* Focus border color */
+ }
+.feedback-section textarea.light-mode {
+    background-color: rgba(0, 0, 0, 0.05);
+ border: 1px solid #ccc;
+  color: #000;
+}
+
+.feedback-section button {
+    padding: 12px 20px;
+      border: none;
+     border-radius: 8px;
+    background-color: #45a049;
+  color: #fff;
+ cursor: pointer;
+font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+.feedback-section button:hover {
+  background-color: #6ab04c;
+}

@@ -1,0 +1,153 @@
+.faq-tabs {
+    width: 95%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+}
+.tab-container {
+   width: 100%;
+   max-width: 1000px;
+   margin: 20px auto;
+ }
+  .tab-nav {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+  }
+
+ .tab-nav li {
+    padding: 10px 20px;
+     border-radius: 20px;
+    cursor: pointer;
+    margin: 5px;
+    background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(10px); /* Glassy blur effect */
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    transition: background-color 0.3s ease;
+}
+  .tab-nav li.light-mode {
+    background: rgba(0,0,0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #333;
+      text-shadow: none;
+}
+  .tab-nav li:hover{
+       background-color: rgba(255, 255, 255, 0.1);
+     }
+    .tab-nav li.light-mode:hover{
+         background-color: rgba(0, 0, 0, 0.1);
+    }
+  .tab-nav li.active {
+      background-color: #6ab04c;
+}
+ .tab-nav li.active.light-mode {
+     background: #333;
+ }
+ .tab-content {
+    display: none;
+    margin-top: 20px;
+     padding: 20px;
+  }
+  .tab-content.active {
+       display: block;
+    }
+  .faq-card{
+      background: rgba(255, 255, 255, 0.04);
+       padding: 15px 20px;
+       border-radius: 10px;
+       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+       transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added shadow transition */
+       overflow: hidden; /* Clip content on hover */
+       border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px); /* Glassy blur effect */
+        margin-bottom: 10px;
+   }
+  .faq-card.light-mode{
+       background: rgba(0,0,0, 0.04);
+       border: 1px solid rgba(0, 0, 0, 0.1);
+   }
+
+    .faq-card:hover {
+       transform: translateY(-3px);
+       box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+     }
+ .faq-card .faq-card-header {
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       cursor: pointer;
+       transition: background-color 0.2s ease;
+        padding: 5px 0;
+ }
+  .faq-card .faq-card-header:hover {
+       background-color: rgba(255, 255, 255, 0.03);
+ }
+   .faq-card .faq-card-header.light-mode:hover {
+       background-color: rgba(0,0,0, 0.03);
+   }
+
+   .faq-card .faq-card-header h3 {
+       font-size: 1.2rem;
+       color: #fff;
+      margin-bottom: 0;
+       text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+.faq-card .faq-card-header h3.light-mode {
+  color: #333;
+  text-shadow: none;
+ }
+.faq-card .faq-card-header i {
+   font-size: 1.2rem;
+   color: #fff;
+   transition: transform 0.3s ease, color 0.3s ease;
+}
+ .faq-card .faq-card-header.active i {
+   transform: rotate(180deg); /* Rotate arrow */
+  color: #6ab04c;
+}
+.faq-card .faq-card-header.light-mode.active i {
+  color: #333;
+}
+.faq-card .faq-card-content {
+  max-height: 0;
+   overflow: hidden;
+   transition: max-height 0.4s ease, padding 0.4s ease;
+   transform: translateY(-10px); /* Start from under the header */
+    transform-origin: top;
+}
+.faq-card .faq-card-content.active {
+     max-height: 500px; /* Increased for larger content */
+    padding: 10px 0 5px 0;
+  transform: translateY(0);
+}
+.faq-card .faq-card-content p {
+  font-size: 1.1rem;
+    color: #fff;
+    margin-top: 10px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+ .faq-card .faq-card-content p.light-mode{
+  color: #333;
+   text-shadow: none;
+ }
+ /* Keyframe Animation for Gradual Appearance of answer text */
+  .faq-card .faq-card-content.active p {
+   animation: textFadeIn 0.5s ease-out forwards;
+    opacity: 0; /* Start with 0 opacity */
+ }
+
+ @keyframes textFadeIn {
+     from {
+         opacity: 0;
+         transform: translateY(-5px);
+    }
+     to {
+        opacity: 1;
+         transform: translateY(0);
+     }
+}

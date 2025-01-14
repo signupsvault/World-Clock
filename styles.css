@@ -1,0 +1,182 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #1a202c;
+  color: #edf2f7;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light-mode {
+  background-color: #ece9e9;
+  color: #000000;
+}
+
+/* Remove hidden styling */
+header,
+footer {
+ transition: opacity 0.2s linear;
+}
+
+
+
+header {
+  background-color: #5a6371;
+  color: #edf2f7;
+  padding: 1px 1px;
+  text-align: center;
+  width: 100%;  /*  ensure it takes full width of screen*/
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0em 2em;
+  margin-top: 10px;
+}
+
+.logo {
+  display: flex;  /* use flex to vertically center the logo image */
+  align-items: center;
+  height: 100%;  /* Ensure .logo container takes the height of header */
+}
+
+.logo img {
+  height: 50px;    /* Set height to fill the header */
+  width: auto;     /* Maintain aspect ratio */
+  max-width: none;  /* Remove max width restriction */
+  max-height: none; /* Remove max height restriction */
+  display: block;  /* Eliminate extra whitespace */
+  aspect-ratio: 1 / 1;  /* Makes the logo a 1:1 ratio (square) */
+  object-fit: contain; /* make sure image fits well in the container*/
+}
+
+/* Responsive Adjustments (Optional)*/
+@media (max-width: 768px) {
+  .logo {
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1em;
+  }
+}
+
+.logo.light-mode {
+  color: #2d3748;
+}
+
+nav ul {
+  list-style: none;
+  padding: 20px;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #f4f9f8;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: rgba(33, 236, 10, 0.208);
+}
+
+nav ul li a.active {
+  background-color: #89e3ab;
+  color: #2d3748;
+}
+
+main {
+  flex: 1; /* Allow main to take available space*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+
+footer {
+  background: #2d3748;
+  color: #edf2f7;
+  text-align: center;
+  padding: 1em 0;
+  margin-top: 20px;
+}
+
+
+/* Adjust the position of the mode switch button*/
+.clock-options button:nth-child(3) {
+  position: relative;
+  order: 1;
+  margin-left: 10px;
+  margin-right: 0;
+}
+
+/* Ensure dropdown text is visible in dark mode */
+select {
+  color: #fef7f7;
+}
+
+select.light-mode {
+  color: #090909;
+}
+
+/*-------------------------------------------------*/
+/*Format Switch*/
+
+.format-switch {
+  position: absolute;
+  top: 140px;
+  right: 20px;
+  transform: none;
+  z-index: 10;
+  display: flex;
+  gap: 10px;
+}
+
+.format-btn {
+  padding: 10px 15px;
+  margin: 0;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 1px solid #666;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #edf2f7;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  backdrop-filter: blur(5px);
+  border: 1px solid #4a5568;
+}
+
+.format-btn.active {
+  background-color: #68d391;
+  color: #2d3748;
+  border: 1px solid #48bb78;
+}
+
+.format-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.format-btn.light-mode {
+  color: #2d3748;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid #a0aec0;
+}
+
+.format-btn.light-mode.active {
+  background-color: #68d391;
+  color: #2d3748;
+  border: 2px solid #48bb78;
+}

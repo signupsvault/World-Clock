@@ -1,0 +1,278 @@
+#clock-section {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    background: linear-gradient(45deg, #050505, #afc0de); /*  darker gradient background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: background 0.5s ease;
+
+}
+
+#clock-section.light-mode{
+ background: linear-gradient(45deg, #bdb8b8, #f7fafc); /* light gradient */
+}
+
+.clock-options {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    z-index: 2;
+    align-items: center;
+    justify-content: flex-start;
+    width: auto;
+    padding: 10;
+    flex-direction: column;
+     gap: 10px;
+
+}
+
+.clock-options button,
+.clock-options select {
+    padding: 10px 15px;
+    margin-right: -200px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: 1px solid #4f4f53f8; /* Border color */
+    border-radius: 5px;
+    background-color: rgba(232, 228, 228, 0.813); /* Translucent background */
+    color: #000000; /* Lighter Text color */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    backdrop-filter: blur(5px); /* Add blur for a better effect */
+}
+
+.clock-options button.active {
+    background-color: #68d391; /* Active color */
+    color: #2d3748; /* dark text color*/
+    border: 1px solid #48bb78;
+}
+
+.clock-options button:hover,
+.clock-options select:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+.clock-options button.light-mode,
+.clock-options select.light-mode {
+    color: #2d3748;
+     background-color: rgba(0,0,0,0.1);
+    border: 1px solid #a0aec0;
+}
+
+.clock-options button.light-mode.active{
+    background-color: #68d391; /* Active color */
+    color: #2d3748; /* dark text color*/
+     border: 1px solid #48bb78;
+}
+
+
+.clock {
+    font-size: 10vw;
+    font-weight: 600;
+    color: #edf2f7; /* Light color */
+    letter-spacing: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Text shadow */
+    transition: color 0.3s ease;
+}
+
+.clock.light-mode{
+   color: #2d3748;
+}
+#digital-clock{
+  display:flex;
+}
+
+#analog-clock {
+    width: 50vw;
+    height: 50vw;
+    max-width: 400px;
+    max-height: 400px;
+    border: 2px solid rgba(255,255,255, 0.1);
+    border-radius: 50%;
+    position: relative;
+    display: none;
+    margin: 0 auto;
+    margin-top: 30px;
+    backdrop-filter: blur(10px);
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: border 0.3s ease;
+}
+
+#analog-clock.light-mode{
+   border: 2px solid rgba(0,0,0, 0.1);
+}
+
+.analog-clock-face{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+
+}
+.analog-clock-face::before{
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1),transparent 50% );
+    border-radius: 50%;
+    z-index: 1;
+    pointer-events:none;
+
+}
+
+.center-dot{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #edf2f7; /* Changed dot color */
+    transform: translate(-50%, -50%);
+    z-index: 3;
+     transition: background-color 0.3s ease;
+}
+
+.center-dot.light-mode{
+   background-color: #2d3748;
+}
+.analog-clock-face .number {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+     text-align: center;
+     font-size: 1.2rem;
+     color: #edf2f7; /* Number color */
+     text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+.analog-clock-face .number.light-mode{
+ color: #2d3748;
+}
+
+.analog-clock-face .number[data-number="1"] {
+    transform: rotate(30deg);
+     top: 15%;
+  right: 15%;
+}
+.analog-clock-face .number[data-number="2"] {
+     transform: rotate(60deg);
+     top: 15%;
+    right: 45%;
+}
+.analog-clock-face .number[data-number="3"] {
+     transform: rotate(90deg);
+   top: 50%;
+  right: 5%;
+}
+.analog-clock-face .number[data-number="4"] {
+  transform: rotate(120deg);
+  bottom: 15%;
+    right: 15%;
+}
+.analog-clock-face .number[data-number="5"] {
+   transform: rotate(150deg);
+   bottom: 15%;
+    right: 45%;
+}
+.analog-clock-face .number[data-number="6"] {
+ transform: rotate(180deg);
+ bottom: 5%;
+    right: 50%;
+}
+.analog-clock-face .number[data-number="7"] {
+     transform: rotate(210deg);
+     bottom: 15%;
+    left: 15%;
+}
+.analog-clock-face .number[data-number="8"] {
+    transform: rotate(240deg);
+     bottom: 15%;
+    left: 45%;
+}
+
+.analog-clock-face .number[data-number="9"] {
+    transform: rotate(270deg);
+      top: 50%;
+    left: 5%;
+
+}
+.analog-clock-face .number[data-number="10"] {
+     transform: rotate(300deg);
+      top: 15%;
+      left: 45%;
+}
+.analog-clock-face .number[data-number="11"] {
+   transform: rotate(330deg);
+     top: 15%;
+     left: 15%;
+}
+.analog-clock-face .number[data-number="12"] {
+ transform: rotate(360deg);
+  top: 5%;
+    left: 50%;
+
+}
+
+.hand {
+  position: absolute;
+  transform-origin: bottom;
+  border-radius: 10px;
+  background-color: #edf2f7; /* Hand color */
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+}
+
+.hand.light-mode{
+  background-color: #2d3748;
+}
+
+
+.hour-hand {
+  width: 6px;
+  height: 25%;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%) rotate(0deg);
+}
+
+.minute-hand {
+    width: 4px;
+    height: 40%;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%) rotate(0deg);
+}
+.second-hand{
+    width: 2px;
+    height: 45%;
+    top: 5%;
+    left: 50%;
+     background-color: #e53e3e; /* Second hand color */
+    transform: translateX(-50%) rotate(0deg);
+}
+
+/* Specific styling for the select to be at left top */
+.clock-options select {
+  order: -1;
+  margin-left: 0;
+}
+
+.clock-options button {
+  margin-right: 0;
+}
