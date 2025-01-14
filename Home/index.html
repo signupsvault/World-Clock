@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Time Zone Clock</title>
+        <!-- Link to Global CSS -->
+    <link rel="stylesheet" href="../styles.css"> 
+    <link rel="stylesheet" href="../Home/styles.css">
+</head>
+<body>
+    
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="../Logo/988ab9fd-0afb-4823-8deb-0d6c4addf1f5.jpg" alt="Global Time Zone Clock Logo"> 
+            </div>
+            <ul>
+                <li><a href="../index.html">Clock</a></li>
+               <li><a href="../Compare Timezones/index.html">Compare TimeZones</a></li>
+               <li><a href="../Time Converter/index.html">Time Converter</a></li>
+               <li><a href="../About Us/index.html">About</a></li>
+                <li><a href="../Contact/index.html">Contact</a></li>
+                <li><a href="../FAQs/index.html">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="format-switch">
+        <button id="format-12hr-btn" class="format-btn active">12 Hour</button>
+        <button id="format-24hr-btn" class="format-btn">24 Hour</button>
+    </div>
+    <main>
+        <section id="clock-section">
+            <div class="clock-options">
+                <button id="digital-clock-btn" class="active">Digital</button>
+                <button id="analog-clock-btn">Analog</button>
+                <select id="country-select"></select>
+            </div>
+            <div id="clock-container">
+                <div id="digital-clock" class="clock"></div>
+                <div id="analog-clock" class="clock" style="display: none;">
+                    <div class="analog-clock-face">
+                        <div class="hand hour-hand"></div>
+                        <div class="hand minute-hand"></div>
+                        <div class="hand second-hand"></div>
+                        <div class="center-dot"></div>
+                          <div class="number" data-number="1">1</div>
+                            <div class="number" data-number="2">2</div>
+                            <div class="number" data-number="3">3</div>
+                            <div class="number" data-number="4">4</div>
+                            <div class="number" data-number="5">5</div>
+                          <div class="number" data-number="6">6</div>
+                           <div class="number" data-number="7">7</div>
+                          <div class="number" data-number="8">8</div>
+                          <div class="number" data-number="9">9</div>
+                            <div class="number" data-number="10">10</div>
+                          <div class="number" data-number="11">11</div>
+                            <div class="number" data-number="12">12</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="hidden">
+        <p>© 2024 Global Time Zone Clock</p>
+    </footer>
+    <!-- Link to Global JS -->
+   <script src="../script.js"></script>
+   <script src="../Home/script.js"></script>
+</body>
+</html>
